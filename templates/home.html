@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/healthcare.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body style="background: linear-gradient(43deg, #f16ed2, #4ff0dd, #f36391);">
+   <header>
+      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Hospital Logo">
+      <h1>Lunetic InnovationS Hospital</h1>
+  </header>
+    <nav>
+      <a href="home.html">🏤 Home</a>
+      <a href="services.html">🚮Services</a>
+      <a href="doctor.html">👨‍⚕️Doctors</a>
+      <a href="appointment.html">📆Appointments</a>
+      <a href="adminlogin.html">👨‍💻Admin login</a>
+      <a href="contact.html">📞Contact</a>
+  </nav>
+    <div id="home">
+
+    </div>
+     <div id="time-table" class="time-table-section">
+        <div class="container2">
+         <h2 class="detehead">The Specialist Hospital</h2>
+           <div class="row2">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                 <div class="service-time">
+                    <span class="info-icon"><i class="fas fa-ambulance" aria-hidden="true"></i></span>
+                    <h3>Emergency Case</h3><br>
+                    <ul>
+                    <li>Handled in the Emergency Department</li>
+                    <li>Accidents, Heart attacks, Strokes, etc</li>
+                    <li>Operates 24/7 for immediate medical</li>
+                    </ul>
+                 </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                 <div class="service-time">
+                    <span class="info-icon"><i class="far fa-clock" aria-hidden="true"></i></span> 
+                    <h3>Working Hours</h3><br>
+                    <div class="time-table-section">
+                       <ul>
+                        <li>Monday - Friday :- 8.00 - 18.00</li>
+                        <li>Saturday :- 8.00 - 16.00</li>
+                        <li>Sunday :- 8.00 - 13.00</li>
+                       </ul>
+                    </div>
+                 </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                 <div class="service-time">
+                    <span class="info-icon"><i class="fas fa-hospital" aria-hidden="true"></i></span>
+                    <h3>Clinic Timetable</h3><br>
+                    <ul>
+                     <li>Outpatient clinics for specialized care</li>
+                     <li>Operate on specific days and times</li>
+                     <li>Appointments scheduled for patient</li>
+                     </ul>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div id="about" class="section">
+        <div class="container4">
+           
+           <div class="row4">
+              <div class="col-md-6">
+                 <div class="message-box">
+                    <h4>What We Do</h4>
+                    <h2>Clinic Service</h2>
+                    <p><b>Primary Care:</b> Our experienced primary care physicians offer routine check-ups,
+                      preventive care, and treatment for common illnesses.</p>
+                    <p><b>Chronic Disease Management:</b> We provide personalized care plans for patients with chronic 
+                     conditions such as diabetes, hypertension, and asthma, to help them manage their health
+                      effectively. </p>
+                      <p><b>Vaccinations and Immunizations:</b> We provide a range of vaccinations and immunizations 
+                        for both children and adults to protect against various diseases.</p>
+                    <a href="#services" class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
+                 </div>
+              </div>
+              <div class="col-md-6">
+                 <div class="new-image">
+                    <img src="{{ url_for('static', filename='images/image2.jpg') }}" alt="" class="img-responsive">
+                    
+                 </div>
+              </div>
+           </div>
+         </div>
+     </div>
+
+      <div id="about2" class="section7">
+         <div class="container7"> 
+           <div class="row3">
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                 <div class="service-widget">
+                    <div class="post-media">
+                      
+                       <img src="{{ url_for('static', filename='images/clinic_01.jpg') }}" alt="" class="img-responsive">
+                    </div>
+                    <h3>Digital Control Center</h3>
+                 </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                 <div class="service-widget">
+                    <div class="post-media">
+                      
+                       <img src="{{ url_for('static', filename='images/clinic_02.jpg') }}" alt="" class="img-responsive">
+                    </div>
+                    <h3>Hygienic Operating Room</h3>
+                 </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                 <div class="service-widget">
+                    <div class="post-media">
+                       
+                       <img src="{{ url_for('static', filename='images/clinic_03.jpg') }}" alt="" class="img-responsive">
+                    </div>
+                    <h3>Specialist Physicians</h3>
+                 </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                 <div class="service-widget">
+                    <div class="post-media">
+                       
+                       <img src="{{ url_for('static', filename='images/clinic_01.jpg') }}" alt="" class="img-responsive">
+                    </div>
+                    <h3>Digital Control Center</h3>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <footer class="footer">
+      <div class="container">
+          <p>&copy; 2024 Lunetic InnovationS Hospital. All Rights Reserved.</p>
+          <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fa fa-envelope"></i></a>
+          </div>
+      </div>
+  </footer>
+  
+</body>
+</html>

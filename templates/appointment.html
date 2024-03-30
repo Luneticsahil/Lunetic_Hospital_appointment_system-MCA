@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hospital Appointment System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/healthcare.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body style="background: linear-gradient(43deg, #f16ed2, #4ff0dd, #f36391);">
+    <header>
+        <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Hospital Logo">
+        <h1>Lunetic InnovationS Hospital</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">🏤 Home</a>
+        <a href="services.html">🚮Services</a>
+        <a href="doctor.html">👨‍⚕️Doctors</a>
+        <a href="appointment.html">📆Appointments</a>
+        <a href="adminlogin.html">👨‍💻Admin login</a>
+        <a href="contact.html">📞Contact</a>
+    </nav>
+    <section class="appointment-form">
+        <h2>Book an Appointment</h2>
+        <form action="{{ url_for('appointment') }}" method="POST" id="appointment-for">
+            <label for="patientName">Patient Name:</label>
+            <input type="text" name="patientName" id="patientName" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" name="dob" id="dob" required>
+
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="tel" name="mobileNumber" id="mobileNumber" required>
+
+            <label for="specialization">Doctor Specialization:</label>
+            <select name="specialization" id="specialization" required>
+                <option value="" disabled selected>Select Specialization</option>
+                <option value="Allergy and immunology">Allergy and immunology</option>
+                <option value="Anesthesiology">Anesthesiology</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Internal Medicine">Internal Medicine</option>
+                <option value="Obstetrics and Gynecology">Obstetrics and Gynecology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Radiology">Radiology</option>
+                <option value="General Surgery">General Surgery</option>
+                <option value="Ophthalmology">Ophthalmology</option>
+                <option value="ENT">ENT</option>
+            </select>
+
+            <label for="doctorName">Select Doctor:</label>
+            <select name="doctorName" id="doctorName" required>
+                <option value="" disabled selected>Select Specialization first</option>
+            </select>
+
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="date" name="appointmentDate" id="appointmentDate" required>
+
+            <label for="appointmentSlot">Select Time Slot:</label>
+            <select name="appointmentSlot" id="appointmentSlot" required>
+                <option value="" disabled selected>Select Time Slot</option>
+            </select>
+
+            <button type="submit" class="Book-button">Book Appointment</button>
+        </form>
+        <section class="appoint-list">
+            <h2>Search Appointments</h2>
+            <div class="apsearch-container">
+                <form action="{{ url_for('search_by_phone_appointment') }}" method="POST">
+                    <input type="text" name="search_phone" placeholder="🔎 Search by Phone Number...">
+                    <button type="submit" class="apsearch-button">Search</button>
+
+                    <form action="{{ url_for('show_all_records_appointment') }}" method="POST">
+                        <button type="submit" class="apclear-button">Clear</button>
+                    </form>
+                </form>
+
+
+            </div>
+
+
+            <table class="appoint-table">
+                <caption>All Appointments</caption>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Patient Name</th>
+                        <th>DOB</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>Mobile Number</th>
+                        <th>Doctor Specialization</th>
+                        <th>Doctor Name</th>
+                        <th>Appointment Date</th>
+                        <th>Time Slot</th>
+                        <th>Time Of Booking</th>
+                    </tr>
+                </thead>
+                <tbody id="appoint-table-body">
+                    {% for appointment in appointments %}
+                    <tr>
+                        <td>{{ appointment.id }}</td>
+                        <td>{{ appointment.patientName }}</td>
+                        <td>{{ appointment.dob }}</td>
+                        <td>{{ appointment.city }}</td>
+                        <td>{{ appointment.email }}</td>
+                        <td>{{ appointment.mobileNumber }}</td>
+                        <td>{{ appointment.specialization }}</td>
+                        <td>{{ appointment.doctorName }}</td>
+                        <td>{{ appointment.appointmentDate }}</td>
+                        <td>{{ appointment.appointmentSlot }}</td>
+                        <td>{{ appointment.TimeOfBooking }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </section>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Lunetic InnovationS Hospital. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/healthcare.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Appointment System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/healthcare.css')}}">
+</head>
+<body style="background: linear-gradient(43deg, #f16ed2, #4ff0dd, #f36391);">
+    <header>
+        <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Hospital Logo">
+        <h1>Lunetic InnovationS Hospital</h1>
+    </header>
+	
+	<nav>
+        <a href="home.html">🏤 Home</a>
+		<a href="{{ url_for('admindata') }}">↩️ Return to Admin Panel</a>
+
+        
+    </nav>
+
+
+    <section class="appointment-form">
+        <h2>Update an Appointment</h2>
+        <form action="/update/{{databas2.id}}" method="POST" id="appointment-form">
+
+
+            <label for="patientName">Patient Name:</label>
+            <input type="text" name="patientName" value="{{databas2.patientName}}" id="patientName" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" name="dob" value="{{databas2.dob}}" id="dob" required>
+
+            <label for="city">City:</label>
+            <input type="text" name="city" value="{{databas2.city}}" id="city" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{databas2.email}}" id="email" required>
+
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="tel" name="mobileNumber" value="{{databas2.mobileNumber}}" id="mobileNumber" required>
+
+            <label for="specialization">Doctor Specialization:</label>
+            <select name="specialization" value="{{databas2.specialization}}" id="specialization" required>
+                <option value="" disabled selected>Select Specialization</option>
+                <option value="Allergy and immunology">Allergy and immunology</option>
+                <option value="Anesthesiology">Anesthesiology</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Internal Medicine">Internal Medicine</option>
+                <option value="Obstetrics and Gynecology">Obstetrics and Gynecology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Radiology">Radiology</option>
+                <option value="General Surgery">General Surgery</option>
+                <option value="Ophthalmology">Ophthalmology</option>
+                <option value="ENT">ENT</option>
+            </select>
+
+            <label for="doctorName">Select Doctor:</label>
+            <select name="doctorName" value="{{databas2.doctorName}}" id="doctorName" required>
+                <option value="" disabled selected>Select Specialization first</option>
+            </select>
+
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="date" name="appointmentDate" value="{{databas2.appointmentDate}}" id="appointmentDate" required>
+
+            <label for="appointmentSlot">Select Time Slot:</label>
+            <select name="appointmentSlot" value="{{databas2.appointmentSlot}}" id="appointmentSlot" required>
+                <option value="" disabled selected>Select Time Slot</option>
+            </select>
+
+            <button type="submit" class="update-Book-button">🖫 Update</button>
+        </form>
+    </section>
+    
+    <script src="{{ url_for('static',filename='js/healthcare.js')}}"></script>
+</body>
+</html>

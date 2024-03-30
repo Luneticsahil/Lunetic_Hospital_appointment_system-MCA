@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Appointment System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/healthcare.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body style="background: linear-gradient(43deg, #f16ed2, #4ff0dd, #f36391);">
+    <header>
+        <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Hospital Logo">
+        <h1>Lunetic InnovationS Hospital</h1>
+    </header>
+	
+	<nav>
+        <a href="home.html">🏤 Home</a>
+        <a href="services.html">🚮 Services</a>
+        <a href="doctor.html">👨‍⚕️ Doctors</a>
+        <a href="appointment.html">📆 Appointments</a>
+        <a href="adminlogin.html">👨‍💻 Admin login</a>
+        <a href="contact.html">📞 Contact</a>
+    </nav>
+    <section class="doctor-list">
+        <h2>Doctors Details</h2>
+        <ul class="horizontal-list">
+            <li>
+                <img src="{{ url_for('static', filename='images/doc4.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Vijay Kumar</h3>
+                    <p>Specialty: Allergy and Immunology</p>
+                    <p>Dr. Vijay Kumar is a renowned specialist in Allergy.</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/doc9.jpeg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Rahul Kumar</h3>
+                    <p>Specialty: Anesthesiology</p>
+                    <p>Dr. Rahul Kumar is a specialist in Anesthesiology.</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/doc1.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Arti Mishra</h3>
+                    <p>Specialty: Dermatology</p>
+                    <p>Dr. Arti Mishra is a specialist in Dermatology.</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/doc12.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Sanjay Gupta</h3>
+                    <p>Specialty: Orthopedics</p>
+                    <p>Dr. Sanjay Gupta is a specialist in Orthopedics.</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/doc2.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Meena Patel</h3>
+                    <p>Specialty: Internal Medicine</p>
+                    <p>Dr. Meena Patel is a specialist in Internal Medicine.</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="horizontal-list">
+            <li>
+                <img src="{{ url_for('static', filename='images/doc11.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Anjali Sharma</h3>
+                    <p>Specialty: Obstetrics and Gynecology</p>
+                    <p>Dr. Anjali Sharma is a specialist in Obstetrics and Gynecology.</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/doc3.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Anoop Verma</h3>
+                    <p>Specialty: Pediatrics</p>
+                    <p>Dr. Anoop Verma is a specialist in Pediatrics.</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/doc6.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Diya Jain</h3>
+                    <p>Specialty: Radiology</p>
+                    <p>Dr. Alok Jain is a specialist in Radiology.</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/doc8.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Nisha Sharma</h3>
+                    <p>Specialty: General Surgery</p>
+                    <p>Dr. Vivek Sharma is a specialist in General Surgery.</p>
+                </div>
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='images/doc10.jpeg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Anjali Kumari</h3>
+                    <p>Specialty: Ophthalmology</p>
+                    <p>Dr. Rakesh Kumar is a specialist in Ophthalmology.</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="horizontal-list">
+            <li>
+                <img src="{{ url_for('static', filename='images/doc7.jpg') }}" alt="" class="img-responsive">
+                <div>
+                    <h3>Dr. Shivani Verma</h3>
+                    <p>Specialty: ENT</p>
+                    <p>Dr. Naveen Verma is a specialist in ENT.</p>
+                </div>
+            </li>
+        </ul>
+        </ul>
+    </section>
+   
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Lunetic InnovationS Hospital. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static',filename='js/healthcare.js')}}"></script>
+</body>
+</html>

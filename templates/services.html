@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Appointment System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/healthcare.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Hospital Logo">
+        <h1>Lunetic InnovationS Hospital</h1>
+    </header>
+    
+    <nav>
+        <a href="home.html">🏤 Home</a>
+        <a href="services.html">🚮 Services</a>
+        <a href="doctor.html">👨‍⚕️ Doctors</a>
+        <a href="appointment.html">📆 Appointments</a>
+        <a href="adminlogin.html">👨‍💻 Admin login</a>
+        <a href="contact.html">📞 Contact</a>
+    </nav>
+
+    <div id="service" class="serviceswow">
+        <div class="service-container">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="serv">
+                    <span class="icon-service"><img src="{{ url_for('static', filename='images/service-icon1.png') }}" alt="#" /></span>
+                    <h4>PREMIUM FACILITIES</h4>
+                    <p>High-quality amenities or services provided, often associated with luxury or superior
+                         standards, aimed at enhancing the overall experience or outcome..</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="serv">
+                    <span class="icon-service"><img src="{{ url_for('static', filename='images/service-icon2.png') }}" alt="#" /></span>
+                    <h4>LARGE LABORATORY</h4>
+                    <p>A spacious, well-equipped facility for conducting scientific experiments, research, or
+                         diagnostic tests, often capable of handling a high volume of samples.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="serv">
+                    <span class="icon-service"><img src="{{ url_for('static', filename='images/service-icon3.png') }}" alt="#" /></span>
+                    <h4>DETAILED SPECIALIST</h4>
+                    <p>A highly skilled professional with in-depth knowledge and expertise in a specific field,
+                         known for their thoroughness and meticulous approach to their work.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="serv">
+                    <span class="icon-service"><img src="{{ url_for('static', filename='images/service-icon4.png') }}" alt="#" /></span>
+                    <h4>CHILDREN CARE CENTER</h4>
+                    <p>A facility dedicated to providing specialized care and services for infants, toddlers,
+                         and young children, ensuring their safety, well-being, and development.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="serv">
+                    <span class="icon-service"><img src="{{ url_for('static', filename='images/service-icon5.png') }}" alt="#" /></span>
+                    <h4>FINE INFRASTRUCTURE</h4>
+                    <p>High-quality physical structures or facilities that support a particular activity or
+                         purpose, often characterized by their durability, efficiency, and aesthetic appeal.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="serv">
+                    <span class="icon-service"><img src="{{ url_for('static', filename='images/service-icon6.png') }}" alt="#" /></span>
+                    <h4>ANYTIME BLOOD BANK</h4>
+                    <p> A facility that collects, stores, and distributes blood and blood products,
+                         available at all times to meet emergency or scheduled transfusion needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Lunetic InnovationS Hospital. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/healthcare.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Appointment System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/healthcare.css') }}">
+</head>
+<body style="background: linear-gradient(43deg, #f16ed2, #4ff0dd, #f36391);">
+    <header>
+        <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Hospital Logo">
+        <h1>Lunetic InnovationS Hospital</h1>
+    </header>
+    
+    <nav>
+        <a href="home.html">🏤Home</a>
+        <a href="services.html">🚮Services</a>
+        <a href="doctor.html">👨‍⚕️Doctors</a>
+        <a href="appointment.html">📆Appointments</a>
+        <a href="adminlogin.html">🔓logout</a>
+        <a href="contact.html">📞Contact</a>
+    </nav>
+    
+    <section class="adminappointment-list">
+        <h2>Search Appointments</h2>
+        <div class="adminsearch-container">
+            <form action="{{ url_for('search_by_phone') }}" method="POST">
+                <input type="text" name="search_phone" placeholder="🔎 Search by Phone Number...">
+                <button type="submit" class="search-button">Search </button>
+            </form>
+            <form action="{{ url_for('show_all_records_clear') }}" method="POST">
+                <button type="submit" class="clear-button">Clear</button>
+            </form>
+        </div>
+        
+
+        
+        <table class="admin-table">
+            <caption>All Appointments</caption>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Patient Name</th>
+                    <th>DOB</th>
+                    <th>City</th>
+                    <th style="width: 50px;">Email</th>
+                    <th style="width: 50px">Mobile Number</th>
+                    <th>Doctor Specialization</th>
+                    <th>Doctor Name</th>
+                    <th style="width: 50px;">Appointment Date</th>
+                    <th>Time Slot</th>
+                    <th>Time Of Booking</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="admin-table">
+                {% if allappoint %}
+                    {% for databas2 in allappoint %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ databas2.patientName }}</td>
+                            <td>{{ databas2.dob }}</td>
+                            <td>{{ databas2.city }}</td>
+                            <td>{{ databas2.email }}</td>
+                            <td style="width: 50px">{{ databas2.mobileNumber }}</td>
+                            <td>{{ databas2.specialization }}</td>
+                            <td>{{ databas2.doctorName }}</td>
+                            <td>{{ databas2.appointmentDate }}</td>
+                            <td>{{ databas2.appointmentSlot }}</td>
+                            <td>{{ databas2.TimeOfBooking }}</td>
+                            <td>
+                                <a href="delete/{{ databas2.id }}" type="button" class="delem">&#x1F5D1; Delete</a>
+                                <a href="update/{{ databas2.id }}" type="button" class="upta">&#x270E; Edit</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="12">
+                            {% if search_results %}
+                                No results found for the specified phone number.
+                            {% else %}
+                                No records available.
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </section>
+    <script src="{{ url_for('static', filename='js/healthcare.js') }}"></script>
+</body>
+</html>
